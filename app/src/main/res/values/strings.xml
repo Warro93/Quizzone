@@ -20,5 +20,7 @@
     <string name="answer2_3">una particella di un atomo</string>
     <string name="answer3_3">un insieme di atomi</string>
     <string name="answer4_3">un\'unità di misura</string>
+    <string name="punti_totali">Punti Totali</string>
+    <string name="il_tuo_punteggio_finale">Il tuo punteggio finale:</string>
 
 </resources>

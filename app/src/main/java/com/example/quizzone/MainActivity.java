@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -16,9 +17,14 @@ public class MainActivity extends AppCompatActivity {
     private Quiz[] quiz1;
     private Button mNext,mAnswer1, mAnswer2, mAnswer3, mAnswer4;
     private TextView mQuestion;
-    private int ris,totalPoint;
+
+    private int ris,totalPoint,playerPoint;
     private static int mCurrentIndex = 0;
     private boolean isSelected;
+
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TOTALPOINTKEY = TAG + "TotalPoint";
+    private static final String POINTKEY = TAG + "Point";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
                     setTextElement();
                     stateButton(true, mAnswer1,mAnswer2,mAnswer3,mAnswer4);
                     resetColorButton(mAnswer1,mAnswer2,mAnswer3,mAnswer4);
+                }else{
+                    Intent i = new Intent(this, PointActivity.class);
+                    i.putExtra(POINTKEY, playerPoint);
+                    i.putExtra(TOTALPOINTKEY, totalPoint);
+                    startActivity(i);
                 }
             }else
                 Toast.makeText(getApplicationContext(), "Devi Selezionare Una Risposta!", Toast.LENGTH_LONG).show();
@@ -102,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkCorrectAnswer(int ris, Button b){
         if(quiz1[mCurrentIndex].isCorrectAnswer(ris)) {
-            totalPoint += 5;
+            playerPoint += 5;
             Toast.makeText(getApplicationContext(), "Risposta Esatta! :)", Toast.LENGTH_SHORT).show();
             b.setBackgroundColor(Color.GREEN);
         }
@@ -111,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
             b.setBackgroundColor(Color.RED);
             getButton(quiz1[mCurrentIndex].getTrueAnswer()).setBackgroundColor(Color.GREEN);
         }
+        totalPoint+=5;
     }
 
     private Button getButton(int n){
