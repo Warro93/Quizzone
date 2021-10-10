@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Quizzone</string>
+    <string name="avanti">Avanti</string>
+
+    <!-->Domande e Risposte<-->
+    <string name="question1">Quanti scudetti ha vinto l\'As Roma?</string>
+    <string name="answer1">3</string>
+    <string name="answer2">Nessuno</string>
+    <string name="answer3">1</string>
+    <string name="answer4">4</string>
+
+    <string name="question2">Come si chiama il presidente della repubblica italiana?</string>
+    <string name="answer1_2">Giorgio Napolitano</string>
+    <string name="answer2_2">Matteo Renzi</string>
+    <string name="answer3_2">Sergio Mattarella</string>
+    <string name="answer4_2">Matteo Salvini</string>
+
+    <string name="question3">Cos\'è un elettrone?</string>
+    <string name="answer1_3">un dispositivo elettrico</string>
+    <string name="answer2_3">una particella di un atomo</string>
+    <string name="answer3_3">un insieme di atomi</string>
+    <string name="answer4_3">un\'unità di misura</string>
+
+</resources>
